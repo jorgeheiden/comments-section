@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Comment } from 'src/app/interfaces/comentarios';
 
 @Component({
   selector: 'app-tarjeta-comentario',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaComentarioComponent implements OnInit {
 
+  
+  @Input() comentario!:Comment
+ 
   constructor() { }
-
+  
   ngOnInit(): void {
+    console.log(this.comentario)
+    
   }
+
+
 
 }

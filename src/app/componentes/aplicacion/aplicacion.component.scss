@@ -1,0 +1,11 @@
+.contenedor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: aliceblue;
+}
+.comentarios__lista{
+    list-style: none;
+}
