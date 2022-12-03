@@ -4,6 +4,15 @@
         <!--Desde este *ngFor, se toma el comentario y luego se lo envia al componente hijo
         "tarjeta-comentario" para luego interpolarlo en la vista --> 
         <app-tarjeta-comentario [comentario]="comentario"></app-tarjeta-comentario>
+        <ul class="borde">
+          <li *ngFor="let respuesta of comentario.replies">
+            <app-respuesta [respuesta]="respuesta"></app-respuesta>
+          </li>
+          <!--Tarjeta respuesta usuario actual-->
+          <li>
+            <app-respuesta-usuario-actual></app-respuesta-usuario-actual>
+          </li>
+        </ul>
       </li>
     </ul>
 </div>

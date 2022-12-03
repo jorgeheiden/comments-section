@@ -1,0 +1,146 @@
+.contenedor{
+    display: flex;
+    justify-content: flex-end;
+}
+.card__reply{
+    display: flex;
+    width: 45vw;
+    min-height: 9.5rem;
+    border-radius: 9px;
+    background-color: white;
+    margin: 1rem 0 0 11%;
+}
+.reply__voto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.2rem 0 1.2rem;
+}
+.reply__voto button{
+    width: 2.2rem;
+    height: 2rem;
+    border: none;
+    cursor: pointer;
+}
+.reply__voto p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 1.8rem;
+    background-color: hsl(223, 19%, 93%);
+    color: hsl(238, 40%, 52%);
+    font-weight: 500;
+}
+.voto__mas{
+    border-radius: 5px 5px 0 0;
+    background-image: url("../../../assets/images/icon-plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45%;
+    background-color: hsl(223, 19%, 93%); 
+}
+.voto__menos{
+    border-radius: 0 0 5px 5px;
+    background-image: url("../../../assets/images/icon-minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45%;
+    background-color: hsl(223, 19%, 93%);
+}
+
+.usuarioActual__elementos{
+    width: 85%;
+    margin: 1rem 0 1rem 0;
+}
+.elemento__perfil__contenedor{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+}
+.perfil__perfil{
+    display: flex;
+    align-items: center;
+}
+.perfil__perfil img{
+    width: 2.1rem;
+    margin-right: 0.5rem;
+}
+.perfil__you{
+    background-color: rgb(29, 29, 196);
+    color: white;
+    padding: 0.1rem 0.4rem 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    margin: 0 0.8rem 0 0.3rem;
+    font-weight: 600;
+}
+.perfil__botones{
+    display: flex;
+    align-items: center;
+}
+
+.boton{
+    width: 4.5rem;
+    border: none;
+    margin: 0 1rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: 50%;
+    background-size: 15%;
+    background-color: transparent;
+}
+.boton__delete{
+    background-image: url("../../../assets/images/icon-delete.svg");
+    color: rgb(231, 19, 19);
+    text-align: right;
+}
+.boton__edit{
+    background-image: url("../../../assets/images/icon-edit.svg");
+    color: hsl(238, 40%, 52%);
+    
+}
+.comentario__comentario p{
+    margin-right: 1rem;
+    color: rgb(126, 126, 126);
+    line-height: 130%;
+}
+.elemento__comentario textarea{
+    width: 90%;
+    resize: none;
+    line-height: 140%;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: gray;
+    cursor: pointer;
+}
+.elemento__comentario textarea:focus{
+    outline: none;
+    border: 2px solid hsl(239, 65%, 60%);
+    cursor: auto;
+}
+.elemento__update{
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+    margin: 0.8rem 1.3rem 0 0;
+}
+.elemento__update button{
+    border: none;
+    width: 5rem;
+    height: 2.5rem;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: blue;
+    border-radius: 6px;
+    cursor: pointer;
+}

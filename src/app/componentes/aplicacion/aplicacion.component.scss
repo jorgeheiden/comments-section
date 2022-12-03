@@ -4,8 +4,24 @@
     flex-direction: column;
     width: 100vw;
     min-height: 100vh;
-    background-color: aliceblue;
+    background-image: linear-gradient(
+  225deg,
+  hsl(240deg 100% 50%) 0%,
+  hsl(238deg 99% 62%) 0%,
+  hsl(237deg 98% 66%) 2%,
+  hsl(237deg 96% 70%) 4%,
+  hsl(235deg 95% 73%) 9%,
+  hsl(234deg 93% 75%) 18%,
+  hsl(233deg 90% 78%) 36%,
+  hsl(231deg 88% 80%) 64%,
+  hsl(229deg 84% 82%) 82%,
+  hsl(227deg 80% 84%) 91%,
+  hsl(223deg 75% 85%) 96%,
+  hsl(218deg 70% 87%) 98%,
+  hsl(212deg 62% 89%) 100%,
+  hsl(200deg 53% 90%) 100%
+);
 }
-.comentarios__lista{
+li{
     list-style: none;
 }
