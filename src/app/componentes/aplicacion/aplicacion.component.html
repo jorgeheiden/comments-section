@@ -3,7 +3,7 @@
       <li *ngFor="let comentario of comentarios" class="comentarios__lista">
         <!--Desde este *ngFor, se toma el comentario y luego se lo envia al componente hijo
         "tarjeta-comentario" para luego interpolarlo en la vista --> 
-        <app-tarjeta-comentario [comentario]="comentario"></app-tarjeta-comentario>
+        <app-tarjeta-comentario [comentario]="comentario" ></app-tarjeta-comentario>
         <ul class="borde">
           <li *ngFor="let respuesta of comentario.replies">
             <app-respuesta [respuesta]="respuesta"></app-respuesta>

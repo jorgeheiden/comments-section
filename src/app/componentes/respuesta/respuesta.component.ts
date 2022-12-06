@@ -13,7 +13,7 @@ export class RespuestaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.respuesta)
+    
   }
 
 }

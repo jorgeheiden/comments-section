@@ -11,7 +11,6 @@ import { Comment } from 'src/app/interfaces/comentarios';
 export class AplicacionComponent implements OnInit {
 
   comentarios!: Comment[]
-
   constructor(private servicio:ServiceService) { }
 
   ngOnInit(): void {

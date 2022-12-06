@@ -23,8 +23,8 @@
     </div>
     <div *ngIf="comentario.user.username == mostrarFormulario" class="tarjeta__reply tarjeta__comentario">
         <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
-        <textarea name="" id="" cols="50" rows="3"></textarea>
-        <button  >Reply</button>
+        <textarea [formControl]="respuestaForm" name="" id="" cols="50" rows="3"></textarea>
+        <button (click)="reply(comentario)" >Reply</button>
     </div>
 </div>
 
