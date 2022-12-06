@@ -13,7 +13,7 @@
                     <p class="perfil__date">{{comentario.createdAt}}</p>
                 </div>
                 <div class="elemento__1__boton">
-                    <button>Reply</button>
+                    <button (click)="abrirFormReply(comentario.user.username)" >Reply</button>
                 </div>
             </div>
             <div class="elemento__2">
@@ -21,10 +21,10 @@
             </div>
         </div>
     </div>
-    <div *ngIf="false" class="tarjeta__reply tarjeta__comentario">
+    <div *ngIf="comentario.user.username == mostrarFormulario" class="tarjeta__reply tarjeta__comentario">
         <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
         <textarea name="" id="" cols="50" rows="3"></textarea>
-        <button>Reply</button>
+        <button  >Reply</button>
     </div>
 </div>
 
