@@ -1,4 +1,4 @@
-<div class="contenedor">
+<div class="contenedor" *ngIf="respuesta.user.username !== usuarioActual.username" >
     <div class="tarjeta__respuesta">
         <div class="contenedor__voto">
             <button class="voto__boton voto__boton--mas"></button>
@@ -13,7 +13,7 @@
                     <p class="perfil__date">{{respuesta.createdAt}}</p>
                 </div>
                 <div class="elemento__1__boton">
-                    <button>Reply</button>
+                    <button (click)="abrirFormReplyRespuesta(respuesta.user.username)">Reply</button>
                 </div>
             </div>
             <div class="elemento__2">
@@ -21,9 +21,9 @@
             </div>
         </div>
     </div>
-    <div *ngIf="false" class="tarjeta__reply tarjeta__respuesta">
+    <div *ngIf="respuesta.user.username == abrirFormRespuesta" class="tarjeta__reply tarjeta__respuesta">
         <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
-        <textarea name="" id="" cols="50" rows="3"></textarea>
-        <button>Reply</button>
+        <textarea [formControl]="formReplyRespuesta" name="" id="" cols="50" rows="3"></textarea>
+        <button (click)="replyRespuesta(respuesta)" >Reply</button>
     </div>
 </div>

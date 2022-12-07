@@ -6,11 +6,11 @@
         <app-tarjeta-comentario [comentario]="comentario" ></app-tarjeta-comentario>
         <ul class="borde">
           <li *ngFor="let respuesta of comentario.replies">
-            <app-respuesta [respuesta]="respuesta"></app-respuesta>
+            <app-respuesta [respuesta]="respuesta" [comentario]="comentario"></app-respuesta>
           </li>
           <!--Tarjeta respuesta usuario actual-->
-          <li>
-            <app-respuesta-usuario-actual></app-respuesta-usuario-actual>
+          <li *ngFor="let respuesta of comentario.replies">
+            <app-respuesta-usuario-actual [respuesta]="respuesta" ></app-respuesta-usuario-actual>
           </li>
         </ul>
       </li>

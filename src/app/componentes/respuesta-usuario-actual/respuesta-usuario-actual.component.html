@@ -1,4 +1,4 @@
-<div class="contenedor">
+<div class="contenedor" *ngIf="respuesta.user.username == usuarioActual.username">
     <div  class="card__reply usuarioActual">
         <div class="reply__voto">
             <button class="voto__mas"></button>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="elemento__comentario comentario__comentario">
-                <p *ngIf="true" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aut molestias eius recusandae et eaque molestiae  </p>
+                <p *ngIf="true" >{{respuesta.content}}</p>
                 <textarea *ngIf="false" name="" id="" cols="50" rows="3"></textarea>
             </div>
             <div  class="elemento__update">

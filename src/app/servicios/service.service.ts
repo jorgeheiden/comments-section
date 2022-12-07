@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 //"resolveJsonModule": true,
 //"esModuleInterop": true,
 import data from "../../assets/datos/data.json"
-import { Comment } from "../interfaces/comentarios"
+import { Comment, User } from "../interfaces/comentarios"
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,11 @@ import { Comment } from "../interfaces/comentarios"
 export class ServiceService {
 
   comentarios:Comment[]
-
+  usuarioActual:User
   constructor() {
     //Acceder al JSON con anotacion de puntos Ej data.comments
     this.comentarios = data.comments
+    this.usuarioActual = data.currentUser
    }
 
    obtenerComentarios(): Comment[]{
@@ -24,7 +25,13 @@ export class ServiceService {
    respuesta(comentario:Comment, respuesta:Comment): void{
     let indice = this.comentarios.indexOf(comentario)
     this.comentarios[indice].replies?.push(respuesta)
-    
+   }
+   respuestaARespuesta(comentario:Comment, respuesta:Comment){
+    let indiceComentario = this.comentarios.indexOf(comentario)
+    this.comentarios[indiceComentario].replies?.push(respuesta)
+   }
+   obtenerUsuarioActual(): User{
+    return this.usuarioActual
    }
 
 }

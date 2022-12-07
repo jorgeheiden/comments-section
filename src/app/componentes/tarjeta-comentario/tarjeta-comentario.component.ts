@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Comment } from 'src/app/interfaces/comentarios';
+import { Comment, User } from 'src/app/interfaces/comentarios';
 import { ServiceService } from 'src/app/servicios/service.service';
 
 @Component({
@@ -13,12 +13,12 @@ export class TarjetaComentarioComponent implements OnInit {
   @Input() comentario!:Comment
   mostrarFormulario:string = ""
   respuestaForm = new FormControl()
-  
+  usuarioActual!:User
 
   constructor(private servicio:ServiceService) { }
   
   ngOnInit(): void {
-
+    this.usuarioActual = this.servicio.obtenerUsuarioActual()
   }
 
   abrirFormReply(user:string): void{
@@ -42,10 +42,10 @@ export class TarjetaComentarioComponent implements OnInit {
       "score": 0,
       "user": {
         "image": { 
-          "png": comentario.user.image.png,
-          "webp": comentario.user.image.webp
+          "png": this.usuarioActual.image.png,
+          "webp": this.usuarioActual.image.webp
         },
-        "username": comentario.user.username
+        "username": this.usuarioActual.username
       },
       "replies": []
     }
