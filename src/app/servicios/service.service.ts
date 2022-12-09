@@ -33,5 +33,13 @@ export class ServiceService {
    obtenerUsuarioActual(): User{
     return this.usuarioActual
    }
+   actualizar(indiceC:number, indiceR:number, editFromValue:string){
 
+    //Se utiliza un if como proteccion de tipo, en el caso que el objeto este vacio
+    if(this.comentarios[indiceC].replies?.[indiceR] != undefined){
+      this.comentarios[indiceC].replies![indiceR].content = editFromValue
+    }
+    //Esta opcion tambien funciona sin tirar error
+    //this.comentarios[indiceC].replies![indiceR].content = editFromValue
+   }
 }

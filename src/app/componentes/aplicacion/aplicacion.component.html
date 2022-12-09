@@ -1,6 +1,6 @@
 <div class="contenedor">
     <ul>
-      <li *ngFor="let comentario of comentarios" class="comentarios__lista">
+      <li *ngFor="let comentario of comentarios; index as indiceComentario" class="comentarios__lista">
         <!--Desde este *ngFor, se toma el comentario y luego se lo envia al componente hijo
         "tarjeta-comentario" para luego interpolarlo en la vista --> 
         <app-tarjeta-comentario [comentario]="comentario" ></app-tarjeta-comentario>
@@ -9,8 +9,8 @@
             <app-respuesta [respuesta]="respuesta" [comentario]="comentario"></app-respuesta>
           </li>
           <!--Tarjeta respuesta usuario actual-->
-          <li *ngFor="let respuesta of comentario.replies">
-            <app-respuesta-usuario-actual [respuesta]="respuesta" ></app-respuesta-usuario-actual>
+          <li *ngFor="let respuesta of comentario.replies; index as indiceRespuesta">
+            <app-respuesta-usuario-actual [respuesta]="respuesta" [indiceComentario]="indiceComentario" [indiceRespuesta]="indiceRespuesta" ></app-respuesta-usuario-actual>
           </li>
         </ul>
       </li>
