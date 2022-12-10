@@ -19,9 +19,19 @@
             <div class="elemento__2">
                 <p>{{comentario.content}}</p>
             </div>
+            <div class="voto__reply__mobil">
+                <div class="contenedor__voto__mobile">
+                    <button class="voto__boton__mobile voto__boton--mas__mobile" (click)="votoMas(comentario)"></button>
+                    <p class="voto__p">{{comentario.score}}</p>
+                    <button class="voto__boton__mobile voto__boton--menos__mobile" (click)="votoMenos(comentario)"></button>
+                </div>
+                <div class="boton__reply__mobile">
+                    <button (click)="abrirFormReply(comentario.user.username)" >Reply</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div *ngIf="comentario.user.username == mostrarFormulario" class="tarjeta__reply tarjeta__comentario">
+    <div *ngIf="comentario.user.username == mostrarFormulario" class="tarjeta__reply">
         <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
         <textarea [formControl]="respuestaForm" name="" id="" cols="50" rows="3"></textarea>
         <button (click)="reply(comentario)" >Reply</button>

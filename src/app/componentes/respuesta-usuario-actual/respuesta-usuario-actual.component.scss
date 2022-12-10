@@ -8,7 +8,7 @@
     min-height: 9.5rem;
     border-radius: 9px;
     background-color: rgba(255, 255, 255, 0.952);
-    margin: 1rem 0 0 11%;
+    margin-top: 1rem;
 }
 .reply__voto{
     display: flex;
@@ -208,3 +208,31 @@
     margin-left: 0.5rem;
     background-color: rgb(226, 113, 113);
 }
+
+//
+@media only screen and (max-width: 600px) {
+    .card__reply{
+        width: 90vw;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .card__reply{
+        width: 80vw;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .card__reply{
+        width: 80vw;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .card__reply{
+        width: 62vw;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .card__reply{
+        width: 50vw;
+    }
+}
+
