@@ -42,4 +42,18 @@ export class ServiceService {
     //Esta opcion tambien funciona sin tirar error
     //this.comentarios[indiceC].replies![indiceR].content = editFromValue
    }
+   eliminar(indiceComentario:number, indiceRespuesta:number){
+     this.comentarios[indiceComentario].replies?.splice(indiceRespuesta, 1)
+     
+   }
+
+   voto(comentario:Comment, voto:number){
+      const indice = this.comentarios.indexOf(comentario)
+      this.comentarios[indice].score = voto
+   }
+   votoRespuesta(comentario:Comment, respuesta:Comment, voto:number){
+      const indiceComentario = this.comentarios.indexOf(comentario)
+      const indiceRespuesta = this.comentarios[indiceComentario].replies!.indexOf(respuesta)
+      this.comentarios[indiceComentario].replies![indiceRespuesta].score = voto
+   }
 }

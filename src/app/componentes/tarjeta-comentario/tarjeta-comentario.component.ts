@@ -14,11 +14,13 @@ export class TarjetaComentarioComponent implements OnInit {
   mostrarFormulario:string = ""
   respuestaForm = new FormControl()
   usuarioActual!:User
-
+  voto!:number
+  contador:number = 0
   constructor(private servicio:ServiceService) { }
   
   ngOnInit(): void {
     this.usuarioActual = this.servicio.obtenerUsuarioActual()
+    this.voto = this.comentario.score
   }
 
   abrirFormReply(user:string): void{
@@ -51,6 +53,27 @@ export class TarjetaComentarioComponent implements OnInit {
     }
     this.servicio.respuesta(comentario, respuesta)
     this.abrirFormReply(comentario.user.username)
+  }
+
+  votoMas(comentario:Comment){
+    if(this.contador == 0){
+      this.contador++
+      this.voto += 1
+    } else if(this.contador == -1){
+      this.contador++
+      this.voto += 1
+    }
+   this.servicio.voto(comentario, this.voto)
+  }
+  votoMenos(comentario:Comment){
+    if(this.contador == 0){
+      this.contador--
+      this.voto -= 1
+    } else if(this.contador == 1){
+      this.contador--
+      this.voto -= 1
+    }
+    this.servicio.voto(comentario, this.voto)
   }
 
 }

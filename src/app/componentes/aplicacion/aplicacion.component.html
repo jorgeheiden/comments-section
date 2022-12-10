@@ -1,4 +1,7 @@
 <div class="contenedor">
+  <video [loop]="true" [muted]="true" [autoplay]="true" playsinline id="back-video" >
+    <source src="../../../assets/background-video/10.mp4" type="video/mp4">
+  </video>
     <ul>
       <li *ngFor="let comentario of comentarios; index as indiceComentario" class="comentarios__lista">
         <!--Desde este *ngFor, se toma el comentario y luego se lo envia al componente hijo
@@ -10,7 +13,7 @@
           </li>
           <!--Tarjeta respuesta usuario actual-->
           <li *ngFor="let respuesta of comentario.replies; index as indiceRespuesta">
-            <app-respuesta-usuario-actual [respuesta]="respuesta" [indiceComentario]="indiceComentario" [indiceRespuesta]="indiceRespuesta" ></app-respuesta-usuario-actual>
+            <app-respuesta-usuario-actual [respuesta]="respuesta" [comentario]="comentario" [indiceComentario]="indiceComentario" [indiceRespuesta]="indiceRespuesta" ></app-respuesta-usuario-actual>
           </li>
         </ul>
       </li>

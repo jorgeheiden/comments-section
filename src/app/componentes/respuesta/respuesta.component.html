@@ -1,9 +1,9 @@
 <div class="contenedor" *ngIf="respuesta.user.username !== usuarioActual.username" >
     <div class="tarjeta__respuesta">
         <div class="contenedor__voto">
-            <button class="voto__boton voto__boton--mas"></button>
+            <button class="voto__boton voto__boton--mas" (click)="votoMas(respuesta)"></button>
             <p>{{respuesta.score}}</p>
-            <button class="voto__boton voto__boton--menos"></button>
+            <button class="voto__boton voto__boton--menos" (click)="votoMenos(respuesta)" ></button>
         </div>
         <div class="respuesta__elementos">
             <div class="elemento__1">

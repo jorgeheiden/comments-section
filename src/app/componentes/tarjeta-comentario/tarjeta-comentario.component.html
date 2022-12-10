@@ -1,9 +1,9 @@
 <div class="contenedor">
     <div class="tarjeta__comentario">
         <div class="contenedor__voto">
-            <button class="voto__boton voto__boton--mas"></button>
+            <button class="voto__boton voto__boton--mas" (click)="votoMas(comentario)"></button>
             <p>{{comentario.score}}</p>
-            <button class="voto__boton voto__boton--menos"></button>
+            <button class="voto__boton voto__boton--menos" (click)="votoMenos(comentario)"></button>
         </div>
         <div class="comentario__elementos">
             <div class="elemento__1">

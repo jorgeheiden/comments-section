@@ -15,16 +15,19 @@ export class RespuestaUsuarioActualComponent implements OnInit {
   @Input() respuesta!:Comment
   @Input() indiceComentario!:number
   @Input() indiceRespuesta!:number
+  @Input() comentario!:Comment
   indiceC:number = -1
   indiceR:number = -1
   usuarioActual!:User
   abrirEdicion:string = ""
   editForm = new FormControl
   mostarModal:boolean = false
+  contador:number = 0;
+  voto!:number
 
   ngOnInit(): void {
     this.usuarioActual = this.servicio.obtenerUsuarioActual()
-    console.log(this.respuesta)
+    this.voto = this.respuesta.score
   }
 
   editar(indiceComentario:number, indiceRespuesta:number, respuesta:string){
@@ -53,8 +56,30 @@ export class RespuestaUsuarioActualComponent implements OnInit {
     } else{
       this.mostarModal = false
     }
+  }
+  eliminarRespuesta(indiceComentario:number , indiceRespuesta:number){
+    this.servicio.eliminar(indiceComentario, indiceRespuesta)
+  }
 
-    
+  votoMas(respuesta:Comment){
+    if(this.contador == 0){
+      this.contador++
+      this.voto += 1
+    } else if(this.contador == -1){
+      this.contador++
+      this.voto += 1
+    }
+   this.servicio.votoRespuesta(this.comentario, respuesta, this.voto)
+  }
+  votoMenos(respuesta:Comment){
+    if(this.contador == 0){
+      this.contador--
+      this.voto -= 1
+    } else if(this.contador == 1){
+      this.contador--
+      this.voto -= 1
+    }
+    this.servicio.votoRespuesta(this.comentario, respuesta, this.voto)
   }
 
 }

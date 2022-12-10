@@ -15,11 +15,14 @@ export class RespuestaComponent implements OnInit {
   usuarioActual!:User
   abrirFormRespuesta:string = ""
   formReplyRespuesta = new FormControl()
+  contador:number = 0;
+  voto!:number
 
   constructor(private servicio: ServiceService) { }
 
   ngOnInit(): void {
     this.usuarioActual = this.servicio.obtenerUsuarioActual()
+    this.voto = this.respuesta.score
   }
 
   abrirFormReplyRespuesta(user:string): void{
@@ -51,5 +54,26 @@ export class RespuestaComponent implements OnInit {
     }
     this.servicio.respuestaARespuesta(this.comentario, resp)
     this.abrirFormReplyRespuesta(respuesta.user.username)
+  }
+
+  votoMas(respuesta:Comment){
+    if(this.contador == 0){
+      this.contador++
+      this.voto += 1
+    } else if(this.contador == -1){
+      this.contador++
+      this.voto += 1
+    }
+   this.servicio.votoRespuesta(this.comentario, respuesta, this.voto)
+  }
+  votoMenos(respuesta:Comment){
+    if(this.contador == 0){
+      this.contador--
+      this.voto -= 1
+    } else if(this.contador == 1){
+      this.contador--
+      this.voto -= 1
+    }
+    this.servicio.votoRespuesta(this.comentario, respuesta, this.voto)
   }
 }

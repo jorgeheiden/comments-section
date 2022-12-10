@@ -1,9 +1,9 @@
 <div class="contenedor" *ngIf="respuesta.user.username == usuarioActual.username">
     <div  class="card__reply usuarioActual">
         <div class="reply__voto">
-            <button class="voto__mas"></button>
-            <p>10</p>
-            <button class="voto__menos"></button>
+            <button class="voto__mas" (click)="votoMas(respuesta)"></button>
+            <p>{{respuesta.score}}</p>
+            <button class="voto__menos" (click)="votoMenos(respuesta)" ></button>
         </div>
         <div class="usuarioActual__elementos">
             <div class="elemento__perfil__contenedor">
@@ -37,7 +37,7 @@
             </div>
             <div class="mensaje__botones">
                 <button class="boton__modal boton__modal--1" (click)="modalEliminar()" >NO, CANCEL</button>
-                <button class="boton__modal boton__modal--2">YES, DELETE</button>
+                <button class="boton__modal boton__modal--2" (click)="eliminarRespuesta(indiceComentario, indiceRespuesta)" >YES, DELETE</button>
             </div>
         </div>
     </div>   
