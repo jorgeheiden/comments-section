@@ -22,8 +22,23 @@
                 <p *ngIf="indiceR == -1" >{{respuesta.content}}</p>
                 <textarea *ngIf="indiceC == indiceComentario && indiceR == indiceRespuesta" [formControl]="editForm" name="" id="" cols="50" rows="3"></textarea>
             </div>
+            <!----------------------------------------->
+            <div class="voto__edit__mobile">
+                <div *ngIf="indiceR == -1" class="reply__voto__mobile">
+                    <button class="voto__boton__mobile voto__boton--mas__mobile" (click)="votoMas(respuesta)"></button>
+                    <p>{{respuesta.score}}</p>
+                    <button class="voto__boton__mobile voto__boton--menos__mobile" (click)="votoMenos(respuesta)" ></button>
+                </div>
+                <div  class="elemento__update__mobile">
+                    <button *ngIf="indiceC == indiceComentario && indiceR == indiceRespuesta" (click)="update(indiceC, indiceR, editForm.value)" >UPDATE</button>
+                </div>
+                <div class="perfil__botones__mobile">
+                    <button class="boton__delete boton" (click)="modalEliminar()" >Delete</button>
+                    <button class="boton__edit boton" (click)="editar(indiceComentario, indiceRespuesta, respuesta.content)" >Edit</button>
+                </div>
+            </div>
             <div  class="elemento__update">
-                <button (click)="update(indiceC, indiceR, editForm.value)" >UPDATE</button>
+                <button *ngIf="indiceC == indiceComentario && indiceR == indiceRespuesta" (click)="update(indiceC, indiceR, editForm.value)" >UPDATE</button>
             </div>
         </div>
     </div>

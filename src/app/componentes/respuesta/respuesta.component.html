@@ -19,6 +19,16 @@
             <div class="elemento__2">
                 <p>{{respuesta.content}}</p>
             </div>
+            <div class="voto__reply__mobile">
+                <div class="contenedor__voto__mobile">
+                    <button class="voto__boton__mobile voto__boton--mas__mobile" (click)="votoMas(respuesta)"></button>
+                    <p>{{respuesta.score}}</p>
+                    <button class="voto__boton__mobile voto__boton--menos__mobile" (click)="votoMenos(respuesta)" ></button>
+                </div>
+                <div class="boton__reply__mobile">
+                    <button (click)="abrirFormReplyRespuesta(respuesta.user.username)">Reply</button>
+                </div>
+            </div>
         </div>
     </div>
     <div *ngIf="respuesta.user.username == abrirFormRespuesta" class="tarjeta__reply tarjeta__respuesta">

@@ -209,30 +209,123 @@
     background-color: rgb(226, 113, 113);
 }
 
-//
+//Media Query
 @media only screen and (max-width: 600px) {
     .card__reply{
         width: 90vw;
+        justify-content: center;
+        padding: 1rem 0 1rem 0;
+    }
+    .usuarioActual__elementos{
+        margin: 0;
+    }
+    .reply__voto{
+        display: none;
+    }
+    .perfil__botones{
+        display: none;
+    }
+    .voto__edit__mobile{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 0.8rem;
+    }
+    .reply__voto__mobile{
+        display: flex;
+    }
+    .reply__voto__mobile p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(223, 19%, 93%);
+        color: hsl(238, 40%, 52%);
+        font-weight: 500; 
+        width: 2.3rem;
+        height: 2.2rem;
+        cursor: default;
+    }
+    .voto__boton__mobile{
+        width: 2.3rem;
+        height: 2.2rem;
+        background-color: hsl(223, 19%, 93%); 
+        border: none;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 45%;
+    }
+    .voto__boton--mas__mobile{
+        border-radius: 5px 0 0 5px;
+        background-image: url("../../../assets/images/icon-plus.svg");
+        
+    }
+    .voto__boton--menos__mobile{
+        border-radius: 0 5px 5px 0;
+        background-image: url("../../../assets/images/icon-minus.svg");
+    }
+    .perfil__botones__mobile{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .boton__edit{
+        margin: 0;
+    }
+    .elemento__update{
+        display: none;
+    }
+    .elemento__update__mobile{
+        display: flex;
+    }
+    .elemento__update__mobile button{
+        border: none;
+        width: 5rem;
+        height: 2.5rem;
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 600;
+        background-color: blue;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .contenedor__mensaje{
+        width: 90%;
     }
 }
 @media only screen and (min-width: 600px) {
     .card__reply{
         width: 80vw;
     }
+    .voto__edit__mobile{
+        display: none;
+    }
+    .contenedor__mensaje{
+        width: 70vw;
+    }
 }
 @media only screen and (min-width: 768px) {
     .card__reply{
         width: 80vw;
+    }
+    .contenedor__mensaje{
+        width: 60vw;
     }
 }
 @media only screen and (min-width: 992px) {
     .card__reply{
         width: 62vw;
     }
+    .contenedor__mensaje{
+        width: 40%;
+    }
 }
 @media only screen and (min-width: 1200px) {
     .card__reply{
         width: 50vw;
+    }
+    .contenedor__mensaje{
+        width: 33vw;
     }
 }
 
