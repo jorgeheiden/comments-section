@@ -9,9 +9,9 @@
             <div class="elemento__perfil__contenedor">
                 <div class="perfil__perfil">
                     <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
-                    <p class="elemento1__user">username</p>
+                    <p class="elemento1__user">{{respuesta.user.username}}</p>
                     <p class="perfil__you">you</p>
-                    <p class="perfil_fecha elemento1__month">1 month ago</p>
+                    <p class="perfil_fecha elemento1__month">{{respuesta.createdAt}}</p>
                 </div>
                 <div class="perfil__botones">
                     <button class="boton__delete boton" (click)="modalEliminar()" >Delete</button>

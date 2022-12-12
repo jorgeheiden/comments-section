@@ -22,6 +22,9 @@ export class ServiceService {
    obtenerComentarios(): Comment[]{
     return this.comentarios
    }
+   newMensaje(mensaje:Comment): void{
+    this.comentarios.push(mensaje)
+   }
    respuesta(comentario:Comment, respuesta:Comment): void{
     let indice = this.comentarios.indexOf(comentario)
     this.comentarios[indice].replies?.push(respuesta)

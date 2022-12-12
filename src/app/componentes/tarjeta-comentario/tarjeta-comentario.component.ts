@@ -16,7 +16,9 @@ export class TarjetaComentarioComponent implements OnInit {
   usuarioActual!:User
   voto!:number
   contador:number = 0
+  
   constructor(private servicio:ServiceService) { }
+
   
   ngOnInit(): void {
     this.usuarioActual = this.servicio.obtenerUsuarioActual()
@@ -40,7 +42,7 @@ export class TarjetaComentarioComponent implements OnInit {
     const respuesta:Comment = {
       "id": 5,
       "content": this.respuestaForm.value,
-      "createdAt": "1 month ago",
+      "createdAt": "Just now",
       "score": 0,
       "user": {
         "image": { 
@@ -53,6 +55,7 @@ export class TarjetaComentarioComponent implements OnInit {
     }
     this.servicio.respuesta(comentario, respuesta)
     this.abrirFormReply(comentario.user.username)
+
   }
 
   votoMas(comentario:Comment){
@@ -75,5 +78,6 @@ export class TarjetaComentarioComponent implements OnInit {
     }
     this.servicio.voto(comentario, this.voto)
   }
+
 
 }

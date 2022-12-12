@@ -41,7 +41,7 @@ export class RespuestaComponent implements OnInit {
     const resp = {
       "id": 3,
           "content": this.formReplyRespuesta.value,
-          "createdAt": "1 week ago",
+          "createdAt": "Just now",
           "score": 4,
           "replyingTo": "",
           "user": {

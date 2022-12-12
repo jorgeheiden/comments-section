@@ -104,6 +104,7 @@
 //Tarjeta Reply
 .tarjeta__reply{
     display: flex;
+    justify-content: center;
     width: 55vw;
     min-height: 9.5rem;
     background-color: rgba(255, 255, 255, 0.952);
@@ -158,6 +159,7 @@
     }
     .tarjeta__reply{
         width: 95vw;
+        min-height: 8rem;
         justify-content: center;
         padding: 1rem 0.5rem 1rem 0.5rem;
     }
