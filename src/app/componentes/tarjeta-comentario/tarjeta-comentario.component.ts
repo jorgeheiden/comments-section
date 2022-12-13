@@ -17,6 +17,7 @@ export class TarjetaComentarioComponent implements OnInit {
   voto!:number
   contador:number = 0
   
+
   constructor(private servicio:ServiceService) { }
 
   
@@ -55,7 +56,7 @@ export class TarjetaComentarioComponent implements OnInit {
     }
     this.servicio.respuesta(comentario, respuesta)
     this.abrirFormReply(comentario.user.username)
-
+   
   }
 
   votoMas(comentario:Comment){

@@ -44,6 +44,13 @@
 .tarjeta__nuevo__mensaje button:hover{
     background-color: rgb(92, 92, 238);;
 }
+.validacion{
+    color: red;
+    margin-left: 0.5rem;
+}
+.validacion-borde{
+    border: 2px solid red;
+}
 //MEDIA QUERY
 @media only screen and (max-width: 600px){
     .tarjeta__nuevo__mensaje{

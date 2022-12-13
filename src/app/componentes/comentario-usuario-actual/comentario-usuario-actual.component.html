@@ -1,0 +1,59 @@
+<div class="contenedor" >
+    <div  class="card__reply usuarioActual">
+        <div class="reply__voto">
+            <button class="voto__mas" ></button>
+            <p>a</p>
+            <button class="voto__menos"  ></button>
+        </div>
+        <div class="usuarioActual__elementos">
+            <div class="elemento__perfil__contenedor">
+                <div class="perfil__perfil">
+                    <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
+                    <p class="elemento1__user">f</p>
+                    <p class="perfil__you">you</p>
+                    <p class="perfil_fecha elemento1__month">h</p>
+                </div>
+                <div class="perfil__botones">
+                    <button class="boton__delete boton"  >Delete</button>
+                    <button class="boton__edit boton"  >Edit</button>
+                </div>
+            </div>
+            <div class="elemento__comentario comentario__comentario">
+                <p ></p>
+                <textarea   name="" id="" cols="50" rows="3"></textarea>
+            </div>
+            <!----------------------------------------->
+            <div class="voto__edit__mobile">
+                <div  class="reply__voto__mobile">
+                    <button class="voto__boton__mobile voto__boton--mas__mobile" ></button>
+                    <p></p>
+                    <button class="voto__boton__mobile voto__boton--menos__mobile" ></button>
+                </div>
+                <div  class="elemento__update__mobile">
+                    <button  >UPDATE</button>
+                </div>
+                <div class="perfil__botones__mobile">
+                    <button class="boton__delete boton" >Delete</button>
+                    <button class="boton__edit boton" >Edit</button>
+                </div>
+            </div>
+            <div  class="elemento__update">
+                <button >UPDATE</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" *ngIf="false" >
+        <div class="contenedor__mensaje">
+            <div class="mensaje__pregunta">
+                <h1>Delete comment</h1>
+                <p>Are you sure you want to delete this comment? This will remove the comment
+                     and can't be undone.
+                </p>
+            </div>
+            <div class="mensaje__botones">
+                <button class="boton__modal boton__modal--1" >NO, CANCEL</button>
+                <button class="boton__modal boton__modal--2" >YES, DELETE</button>
+            </div>
+        </div>
+    </div>   
+</div>

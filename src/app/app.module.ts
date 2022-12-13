@@ -9,6 +9,7 @@ import { AplicacionComponent } from './componentes/aplicacion/aplicacion.compone
 import { RespuestaComponent } from './componentes/respuesta/respuesta.component';
 import { RespuestaUsuarioActualComponent } from './componentes/respuesta-usuario-actual/respuesta-usuario-actual.component';
 import { TarjetaNuevoComentarioComponent } from './componentes/tarjeta-nuevo-comentario/tarjeta-nuevo-comentario.component';
+import { ComentarioUsuarioActualComponent } from './componentes/comentario-usuario-actual/comentario-usuario-actual.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TarjetaNuevoComentarioComponent } from './componentes/tarjeta-nuevo-com
     AplicacionComponent,
     RespuestaComponent,
     RespuestaUsuarioActualComponent,
-    TarjetaNuevoComentarioComponent
+    TarjetaNuevoComentarioComponent,
+    ComentarioUsuarioActualComponent
   ],
   imports: [
     BrowserModule,

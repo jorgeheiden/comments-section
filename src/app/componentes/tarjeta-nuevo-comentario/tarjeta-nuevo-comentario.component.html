@@ -1,5 +1,6 @@
 <div class="tarjeta__nuevo__mensaje">
     <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
-    <textarea [formControl]="formNuevoMensaje"  name="" id="" cols="50" rows="3"></textarea>
+    <textarea [ngClass]="{'validacion-borde': formNuevoMensaje.hasError('required') && formNuevoMensaje.touched}" [formControl]="formNuevoMensaje"  name="" id="" cols="50" rows="3" placeholder="New message . . ." ></textarea>
     <button (click)="nuevoMensaje()" >SEND</button>
+    <p class="validacion" *ngIf="formNuevoMensaje.hasError('required') && formNuevoMensaje.touched">Campo requerido</p>
 </div>
