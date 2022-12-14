@@ -36,6 +36,7 @@ export class ServiceService {
    obtenerUsuarioActual(): User{
     return this.usuarioActual
    }
+   //Actualiza la respuesta
    actualizar(indiceC:number, indiceR:number, editFromValue:string){
 
     //Se utiliza un if como proteccion de tipo, en el caso que el objeto este vacio
@@ -44,10 +45,17 @@ export class ServiceService {
     }
     //Esta opcion tambien funciona sin tirar error
     //this.comentarios[indiceC].replies![indiceR].content = editFromValue
-   }
+  }
+  //Actualiza el comentario
+  actualizarComentario(indice:number, editFormComentariovalue:string){
+    this.comentarios[indice].content = editFormComentariovalue
+  }
+  //Elimina respuesta
    eliminar(indiceComentario:number, indiceRespuesta:number){
      this.comentarios[indiceComentario].replies?.splice(indiceRespuesta, 1)
-     
+   }
+   eliminarComentario(indice:number){
+    this.comentarios.splice(indice, 1)
    }
 
    voto(comentario:Comment, voto:number){

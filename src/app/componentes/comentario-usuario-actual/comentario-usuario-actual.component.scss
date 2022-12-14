@@ -220,7 +220,7 @@
 //Media Query
 @media only screen and (max-width: 600px) {
     .card__reply{
-        width: 90vw;
+        width: 95vw;
         justify-content: center;
         padding: 1rem 0 1rem 0;
     }
@@ -303,7 +303,7 @@
 }
 @media only screen and (min-width: 600px) {
     .card__reply{
-        width: 80vw;
+        width: 90vw;
     }
     .voto__edit__mobile{
         display: none;
@@ -314,7 +314,7 @@
 }
 @media only screen and (min-width: 768px) {
     .card__reply{
-        width: 80vw;
+        width: 90vw;
     }
     .contenedor__mensaje{
         width: 60vw;

@@ -1,4 +1,4 @@
-<div class="contenedor">
+<div class="contenedor" *ngIf="usuarioActual.username !== comentario.user.username ">
     <div class="tarjeta__comentario">
         <div class="contenedor__voto">
             <button class="voto__boton voto__boton--mas" (click)="votoMas(comentario)"></button>

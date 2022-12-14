@@ -17,7 +17,6 @@ export class TarjetaComentarioComponent implements OnInit {
   voto!:number
   contador:number = 0
   
-
   constructor(private servicio:ServiceService) { }
 
   

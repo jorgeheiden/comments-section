@@ -1,48 +1,48 @@
-<div class="contenedor" >
+<div class="contenedor" *ngIf="usuarioActual.username == comentario.user.username" >
     <div  class="card__reply usuarioActual">
         <div class="reply__voto">
-            <button class="voto__mas" ></button>
-            <p>a</p>
-            <button class="voto__menos"  ></button>
+            <button class="voto__mas" (click)="votoMas(comentario)" ></button>
+            <p>{{comentario.score}}</p>
+            <button class="voto__menos" (click)="votoMenos(comentario)" ></button>
         </div>
         <div class="usuarioActual__elementos">
             <div class="elemento__perfil__contenedor">
                 <div class="perfil__perfil">
-                    <img src="../../../assets/images/avatars/image-juliusomo.png" alt="">
-                    <p class="elemento1__user">f</p>
+                    <img [src]="comentario.user.image.png" alt="">
+                    <p class="elemento1__user">{{comentario.user.username}}</p>
                     <p class="perfil__you">you</p>
-                    <p class="perfil_fecha elemento1__month">h</p>
+                    <p class="perfil_fecha elemento1__month">{{comentario.createdAt}}</p>
                 </div>
                 <div class="perfil__botones">
-                    <button class="boton__delete boton"  >Delete</button>
-                    <button class="boton__edit boton"  >Edit</button>
+                    <button class="boton__delete boton" (click)="modalEliminar()" >Delete</button>
+                    <button class="boton__edit boton"  (click)="editar(comentario, indiceComentario)"  >Edit</button>
                 </div>
             </div>
             <div class="elemento__comentario comentario__comentario">
-                <p ></p>
-                <textarea   name="" id="" cols="50" rows="3"></textarea>
+                <p *ngIf="abrirEdicion == -1" >{{comentario.content}}</p>
+                <textarea *ngIf="abrirEdicion == indiceComentario" [formControl]="editFormComentario" name="" id="" cols="50" rows="3"></textarea>
             </div>
             <!----------------------------------------->
             <div class="voto__edit__mobile">
-                <div  class="reply__voto__mobile">
+                <div *ngIf="abrirEdicion == -1" class="reply__voto__mobile">
                     <button class="voto__boton__mobile voto__boton--mas__mobile" ></button>
-                    <p></p>
+                    <p>{{comentario.score}}</p>
                     <button class="voto__boton__mobile voto__boton--menos__mobile" ></button>
                 </div>
                 <div  class="elemento__update__mobile">
-                    <button  >UPDATE</button>
+                    <button *ngIf="abrirEdicion == indiceComentario" (click)="updateComentario(indiceComentario, editFormComentario.value)" >UPDATE</button>
                 </div>
                 <div class="perfil__botones__mobile">
-                    <button class="boton__delete boton" >Delete</button>
-                    <button class="boton__edit boton" >Edit</button>
+                    <button class="boton__delete boton" (click)="modalEliminar()" >Delete</button>
+                    <button class="boton__edit boton" (click)="editar(comentario, indiceComentario)" >Edit</button>
                 </div>
             </div>
             <div  class="elemento__update">
-                <button >UPDATE</button>
+                <button *ngIf="abrirEdicion == indiceComentario" (click)="updateComentario(indiceComentario, editFormComentario.value)" >UPDATE</button>
             </div>
         </div>
     </div>
-    <div class="modal" *ngIf="false" >
+    <div class="modal" *ngIf="mostrarModal" >
         <div class="contenedor__mensaje">
             <div class="mensaje__pregunta">
                 <h1>Delete comment</h1>
@@ -51,8 +51,8 @@
                 </p>
             </div>
             <div class="mensaje__botones">
-                <button class="boton__modal boton__modal--1" >NO, CANCEL</button>
-                <button class="boton__modal boton__modal--2" >YES, DELETE</button>
+                <button class="boton__modal boton__modal--1" (click)="modalEliminar()" >NO, CANCEL</button>
+                <button class="boton__modal boton__modal--2" (click)="eliminarComentario(indiceComentario)" >YES, DELETE</button>
             </div>
         </div>
     </div>   
